@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tarea 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tarea 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-card>
+      <img src="https://imageresizer.static9.net.au/LGTsV6q7RbygFcH5uMY9q7Azkxs=/696x696/https%3A%2F%2Fprod.static9.net.au%2Ffs%2F4dcfee1d-c6c4-4bad-924c-d51864ce81a6" width="300" height="300"/>
+      <ion-card-header>
+        <ion-card-title>{{tittleCard}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-subtitle>{{subtittle}}</ion-card-subtitle>
+      <ion-card-content>Desde: Lps. 329.00</ion-card-content>
+      <ion-card-content>Cantidad:
+        <ion-button (click)="disminuir()">-</ion-button>
+        <ion-text>{{contador}}</ion-text>
+        <ion-button (click)="aumentar()">+</ion-button>
+        <ion-button color="success" id="ordenar">Ordenar</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-alert 
+    trigger="ordenar"
+    header = "Ordenar"
+    subHeader = "¿Está seguro que desea ordenar {{contador}} {{tittleCard}}?"
+    message= "Se enviará la orden a cocina y nuestro personal con gusto le sevirá la orden"
+    [buttons]="orderButtons"
+    >
+    </ion-alert>
+  </div>
+</ion-content>
